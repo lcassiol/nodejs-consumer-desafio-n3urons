@@ -6,13 +6,14 @@ export default class RabbitMQServer {
 
   constructor(private uri: string) {}
 
-  async start(): Promise<void> {
+  async start(queue: string, replyQueue: string): Promise<void> {
     this.conn = await connect(this.uri);
     this.channel = await this.conn.createChannel();
+    this.channel.assertQueue(queue);
+    this.channel.assertQueue(replyQueue);
   }
 
   async publishInQueue(queue: string, message: string) {
-    this.channel.assertQueue(queue);
     return this.channel.sendToQueue(queue, Buffer.from(message));
   }
 
