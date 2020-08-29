@@ -2,7 +2,7 @@
 
 ## ✨Objetivo
 
-O objetivo do projeto é consumir uma fila do RabbitMQ em que o projeto principal envia uma solicitação simulando a chamada para um meio de pagamento, este projeto consome o dado e persiste no MongoDB em seguida retorna uma mensagem para uma nova fila com sucesso para que o projeto principal possa alterar o status do pedido para finalizado.
+O objetivo do projeto é consumir uma fila do RabbitMQ em que o projeto principal realiza o envio simulando a chamada para um meio de pagamento, este projeto consome o dado e persiste no MongoDB em seguida retorna uma mensagem para uma nova fila com sucesso para que o projeto principal possa alterar o status do pedido para finalizado.
 
 ---------------------------------
 
